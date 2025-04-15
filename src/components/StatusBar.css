@@ -1,0 +1,85 @@
+.status-bar {
+    width: 100%;
+    padding: 8px 0;
+    font-size: 14px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+  
+  .status-message {
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 20px;
+    animation: pulse 2s infinite;
+  }
+  
+  /* Status States */
+  .status-bar.online {
+    background: rgba(46, 125, 50, 0.15);
+    color: #2e7d32;
+  }
+  
+  .status-bar.online .status-indicator {
+    background: #2e7d32;
+  }
+  
+  .status-bar.syncing {
+    background: rgba(25, 118, 210, 0.15);
+    color: #1976d2;
+  }
+  
+  .status-bar.syncing .status-indicator {
+    background: #1976d2;
+  }
+  
+  .status-bar.offline {
+    background: rgba(211, 47, 47, 0.15);
+    color: #d32f2f;
+  }
+  
+  .status-bar.offline .status-indicator {
+    background: #d32f2f;
+  }
+  
+  .status-bar.checking {
+    background: rgba(249, 168, 37, 0.15);
+    color: #f9a825;
+  }
+  
+  .status-bar.checking .status-indicator {
+    background: #f9a825;
+  }
+  
+  @keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+  }
+  
+  @media (max-width: 768px) {
+    .status-bar {
+      font-size: 12px;
+      padding: 6px 0;
+    }
+    
+    .status-message {
+      padding: 0 10px;
+    }
+    
+    .status-indicator {
+      margin-right: 10px;
+    }
+  }
